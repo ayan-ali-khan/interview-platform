@@ -71,7 +71,7 @@ export async function setSessionCookie(idToken: string) {
     const cookieStore = await cookies();
 
     const sessionCookie = await auth.createSessionCookie(idToken, {
-        expiresIn: ONE_WEEK ,//days
+        expiresIn: ONE_WEEK * 1000,//days
     })
 
     cookieStore.set('session', sessionCookie, {

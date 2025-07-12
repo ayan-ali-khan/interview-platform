@@ -25,13 +25,13 @@ const InterviewCard = ({ interviewId, userId, role, type, techstack, createdAt }
                 <h3 className='mt-5 capitalize'>{role} Interview</h3>
 
                 <div className='flex flex-row gap-5 mt-3'>
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-row gap-2'>
                         <Image src="/calendar.svg" alt='calendar ' width={22} height={22}/>
 
                         <p>{formattedDate}</p>
                     </div>
 
-                    <div className='flex flex-col gap-2 items-center'>
+                    <div className='flex flex-row gap-2 items-center'>
                         <Image src="/star.svg" alt='star' width={22} height={22}/>
                         <p>{feedback?.totalScore || '---'}/100</p>
                     </div>
@@ -41,7 +41,7 @@ const InterviewCard = ({ interviewId, userId, role, type, techstack, createdAt }
             </div>
 
             <div className='flex flex-row justify-between'>
-                <p><DisplayTechIcons techStack={techstack}/></p>
+                <span><DisplayTechIcons techStack={techstack}/></span>
 
                 <Button className='btn-primary'>
                     <Link href={feedback ? `/interview/${interviewId}/feedback` : `/interview/${interviewId}`}>

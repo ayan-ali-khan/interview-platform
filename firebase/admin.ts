@@ -21,4 +21,4 @@ const initFirebaseAdmin = () => {
     }
 }
 
-export const firebaseAdmin = initFirebaseAdmin();
+export const { auth, db } = initFirebaseAdmin();
